@@ -18,3 +18,5 @@ spec:
         name: postgres
         ports:
           - containerPort: 8080
+        env:
+          - POSTGRES_PASSWORD: {{ .Values.POSTGRES_PASSWORD }}
