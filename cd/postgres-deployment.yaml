@@ -16,5 +16,4 @@ spec:
       containers:
       - image: postgres:latest
         name: postgres
-        ports:
-          - 8080:8080
+        
