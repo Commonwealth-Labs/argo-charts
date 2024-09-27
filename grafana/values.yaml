@@ -242,6 +242,12 @@ service:
   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
   appProtocol: ""
 
+service:
+  type: NodePort
+  nodePort: 32000
+  port: 9000
+  targetPort: 3000
+  
 serviceMonitor:
   ## If true, a ServiceMonitor CR is created for a prometheus operator
   ## https://github.com/coreos/prometheus-operator
