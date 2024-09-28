@@ -31,6 +31,7 @@ backend:
   replicas: 3
 read:
   replicas: 3
+  affinity: {}
 write:
   replicas: 3
 
