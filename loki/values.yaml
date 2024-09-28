@@ -48,6 +48,10 @@ minio:
 singleBinary:
   replicas: 0
 
+memcached:
+    chunk_cache:
+      enabled: false
+
 ingester:
   replicas: 0
 querier:
