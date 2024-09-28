@@ -1,0 +1,28 @@
+# graylog-values.yaml
+
+replicaCount: 1
+
+elasticsearch:
+  host: elasticsearch.graylog.svc.cluster.local
+  port: 9200
+
+mongodb:
+  uri: mongodb://mongodb.graylog.svc.cluster.local:27017/graylog
+
+service:
+  type: LoadBalancer  # Use NodePort or ClusterIP as needed
+
+persistence:
+  enabled: true
+  size: 10Gi
+
+graylog:
+  # Set the root password SHA2 hash (default is 'admin')
+  root_password_sha2: e3ceb5881a0a1fdaad01296d7554868d
+
+  # Password secret (generate a random string)
+  password_secret: ffd0d6d49fbe3564f38e0f1ce17150a8
+
+  # Enable the web interface and REST API
+  web_listen_uri: http://0.0.0.0:9000/
+  rest_listen_uri: http://0.0.0.0:9000/
