@@ -48,9 +48,8 @@ minio:
 singleBinary:
   replicas: 0
 
-memcached:
-    chunk_cache:
-      enabled: false
+chunksCache:
+  enabled: false
 
 ingester:
   replicas: 0
