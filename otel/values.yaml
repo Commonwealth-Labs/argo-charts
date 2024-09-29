@@ -94,7 +94,7 @@ config:
   exporters:
     opensearch:
       http:
-        endpoint: ["http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"]
+        endpoint: "http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"
 
 
   extensions:
