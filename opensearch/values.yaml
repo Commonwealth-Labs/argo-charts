@@ -4,7 +4,7 @@ replicas: 1
 
 extraEnvs:
   - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
-    value: asdfQWER1234
+    value: asdfQWER1234!
 
 persistence:
   enabled: false  # Enable this in production with appropriate storage class
