@@ -202,9 +202,8 @@ image:
 imagePullSecrets: []
 
 # OpenTelemetry Collector executable
-# command:
-#   name: "otelcontribcol"
-#   extraArgs: []
+command:
+  name: "otelcol-contrib"
 
 serviceAccount:
   # Specifies whether a service account should be created
