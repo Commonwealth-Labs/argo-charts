@@ -104,9 +104,9 @@ config:
     health_check:
       endpoint: ${env:MY_POD_IP}:13133
     basicauth/client:
-    client_auth:
-      username: admin
-      password: asdfQWER1234!
+      client_auth:
+        username: admin
+        password: asdfQWER1234!
 
   processors:
     batch: {}
