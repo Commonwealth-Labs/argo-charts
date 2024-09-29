@@ -93,16 +93,21 @@ configMap:
 config:
   exporters:
     opensearch:
-      endpoint: ["http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"]
-      logs_index: "otel-logs"
-      tls:
-        insecure_skip_verify: true  # Set to false if using TLS/SSL
+      http:
+        endpoint: ["http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"]
+
+
   extensions:
     # The health_check extension is mandatory for this chart.
     # Without the health_check extension the collector will fail the readiness and liveliness probes.
     # The health_check extension can be modified, but should never be removed.
     health_check:
       endpoint: ${env:MY_POD_IP}:13133
+    basicauth/client:
+    client_auth:
+      username: admin
+      password: asdfQWER1234!
+
   processors:
     batch: {}
     # Default memory limiter configuration for the collector based on k8s resource limits.
@@ -147,7 +152,7 @@ config:
     pipelines:
       logs:
         exporters:
-          - debug
+          - opensearch
         processors:
           - memory_limiter
           - batch
@@ -164,7 +169,7 @@ config:
           - prometheus
       traces:
         exporters:
-          - debug
+          - opensearch
         processors:
           - memory_limiter
           - batch
