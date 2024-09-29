@@ -1,14 +1,5 @@
 # opensearch-values.yaml
 
-clusterName: "opensearch-cluster"
-nodeGroup: "master"
-
-roles:
-  - master
-  - ingest
-  - data
-  - remote_cluster_client
-
 replicas: 1
 
 config:
@@ -19,14 +10,6 @@ config:
 
 persistence:
   enabled: false  # Enable this in production with appropriate storage class
-
-resources:
-  requests:
-    cpu: "100m"
-    memory: "512Mi"
-  limits:
-    cpu: "1000m"
-    memory: "1Gi"
 
 service:
   type: NodePort  # Change to LoadBalancer or NodePort if external access is needed
