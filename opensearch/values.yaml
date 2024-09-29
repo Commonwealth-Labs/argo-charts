@@ -4,16 +4,18 @@ clusterName: "opensearch-cluster"
 nodeGroup: "master"
 
 roles:
-  master: "true"
-  ingest: "true"
-  data: "true"
-  remote_cluster_client: "true"
+  - master
+  - ingest
+  - data
+  - remote_cluster_client
 
 replicas: 1
 
-esConfig:
-  opensearch.yml: |
-    plugins.security.disabled: true  # Disable security features for simplicity; not recommended for production
+config:
+  opensearch.yml:
+    plugins:
+      security:
+        disabled: true
 
 persistence:
   enabled: false  # Enable this in production with appropriate storage class
