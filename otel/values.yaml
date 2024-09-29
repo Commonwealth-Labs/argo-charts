@@ -93,10 +93,10 @@ configMap:
 config:
   exporters:
     opensearch:
-      endpoints: ["http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"]
-      index: "otel-logs"
+      endpoint: ["http://opensearch-cluster-master.opensearch.svc.cluster.local:9200"]
+      logs_index: "otel-logs"
       tls:
-        insecure: true  # Set to false if using TLS/SSL
+        insecure_skip_verify: true  # Set to false if using TLS/SSL
   extensions:
     # The health_check extension is mandatory for this chart.
     # Without the health_check extension the collector will fail the readiness and liveliness probes.
