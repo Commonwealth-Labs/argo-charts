@@ -160,7 +160,7 @@ config:
           - otlp
       metrics:
         exporters:
-          - debug
+          # - debug
         processors:
           - memory_limiter
           - batch
